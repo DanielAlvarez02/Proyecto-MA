@@ -1,9 +1,11 @@
 package com.company;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
-
+    static Timer timer = new Timer();
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("hola");
+        Cronometro cronometro = new Cronometro();
+        cronometro.iniciar();
     }
 }
