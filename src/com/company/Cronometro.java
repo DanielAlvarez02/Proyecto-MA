@@ -58,10 +58,10 @@ public class Cronometro {
             if(segundosRestantes > 0){
                 System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
                 System.out.println("Segundos restantes: " + segundosRestantes +"\nEscriba p para pausar");
-                Scanner scanner = new Scanner(System.in);
-                if(scanner.next().equals("p")){
-                    pausar();
-                }
+//                Scanner scanner = new Scanner(System.in);
+//                if(scanner.next().equals("p")){
+//                    pausar();
+//                }
                 segundosRestantes--;
             }
             else{
