@@ -6,6 +6,6 @@ public class Main {
     static Timer timer = new Timer();
     public static void main(String[] args) {
         Cronometro cronometro = new Cronometro();
-        cronometro.iniciar();
+        cronometro.iniciarCiclos();
     }
 }
