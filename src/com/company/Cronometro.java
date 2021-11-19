@@ -67,7 +67,6 @@ public class Cronometro {
 
         //Este es el método que el cronómetro ejecuta cada 1 segundo
 
-
         // ****Por ahora solo imprime los segundos restantes y rota de fase****
         @Override
         public void run() {
