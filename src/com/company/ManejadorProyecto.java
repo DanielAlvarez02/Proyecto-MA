@@ -27,7 +27,7 @@ public class ManejadorProyecto {
 
         }
     }
-    public void elimiarProyecto(String nombreProyecto){
+    public void eliminarProyecto(String nombreProyecto){
         Iterator <Proyecto>it = lista.iterator();
         while(it.hasNext()){
             String tema = it.next().getTema();
@@ -37,8 +37,6 @@ public class ManejadorProyecto {
 
         }
     }
-    public void editarPomodoro(){
-        
-    }
+    
 
 }
