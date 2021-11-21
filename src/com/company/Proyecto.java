@@ -6,6 +6,14 @@ public class Proyecto {
     String tema;
     HashMap<String, Tarea> lista = new HashMap<>();
 
+    public Proyecto(){
+
+    }
+
+    public String getTema() {
+        return tema;
+    }
+
     public void ejecutar(){
 
     }
@@ -26,5 +34,13 @@ public class Proyecto {
     }
     public void detener(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Proyecto{" +
+                "tema='" + tema + '\'' +
+                ", lista=" + lista +
+                '}';
     }
 }

@@ -1,24 +1,44 @@
 package com.company;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class ManejadorProyecto {
-    HashMap<String, Proyecto> lista = new HashMap<>();
+    private LinkedList <Proyecto> lista;
     Cronometro pomodoro = new Cronometro();
 
-    public void agregarProyecto(){
-
+    public ManejadorProyecto() {
+        lista = new LinkedList<Proyecto>();
     }
-    public void abrirProyecto(){
 
+    public void agregarProyecto(Proyecto proyecto){
+        lista.add(proyecto);
     }
-    public void buscarProyecto(){
-
+    public void abrirProyecto(Proyecto proyecto){
+        proyecto.toString();
     }
-    public void elimiarProyecto(){
+    public void buscarProyecto(String nombreProyecto){
+        Iterator <Proyecto>it = lista.iterator();
+        while(it.hasNext()){
+            String tema = it.next().getTema();
+            if(tema.equalsIgnoreCase(nombreProyecto)){
+                it.toString();
+            }
 
+        }
+    }
+    public void elimiarProyecto(String nombreProyecto){
+        Iterator <Proyecto>it = lista.iterator();
+        while(it.hasNext()){
+            String tema = it.next().getTema();
+            if(tema.equalsIgnoreCase(nombreProyecto)){
+                it.remove();
+            }
+
+        }
     }
     public void editarPomodoro(){
-
+        
     }
 
 }
