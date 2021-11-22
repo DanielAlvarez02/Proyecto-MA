@@ -88,7 +88,7 @@ public class ManejadorProyecto {
                         salir = true;
                         break;
                     default:
-                        System.out.println("Solo números entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Debes insertar un número");
