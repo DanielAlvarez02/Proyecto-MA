@@ -12,8 +12,18 @@ public class ManejadorProyecto {
     public void agregarProyecto(Proyecto proyecto){
         lista.add(proyecto);
     }
-    public void abrirProyecto(Proyecto proyecto){
-        proyecto.toString();
+    public void abrirProyecto(){
+        Scanner sn = new Scanner(System.in);
+        System.out.println("A continuación se muestran todos los proyecto: \n");
+        System.out.println(lista.toString());
+        System.out.println("Por favor ingrese el nombre del proyecto que desea abrir: \n");
+        String tema = sn.next();
+        for(Proyecto aux: lista){
+            if(aux.getTema().equalsIgnoreCase(tema)){
+                aux.toString();
+            }
+        }
+
     }
     public void buscarProyecto(String nombreProyecto){
         Iterator <Proyecto>it = lista.iterator();
@@ -69,16 +79,16 @@ public class ManejadorProyecto {
                         int num2 = sn.nextInt();
                         pomodoro.modificarTiempoDeDescansoLargo(num2);
                         break;
-                    case 5:
+                    case 4:
                         System.out.println("Ingrese el número de ciclos deldescanso largo: \n");
                         int num3 = sn.nextInt();
                         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(num3);
                         break;
-                    case 4:
+                    case 5:
                         salir = true;
                         break;
                     default:
-                        System.out.println("Solo números entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Debes insertar un número");
