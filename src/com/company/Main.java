@@ -23,7 +23,7 @@ public class Main {
             } else if(input.equals("2")){
                 manejador.editarPomodoro();
             }
-            else return;
+            else System.exit(1);
         }
     }
 
