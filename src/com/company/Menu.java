@@ -10,11 +10,10 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
 
     public Menu() {
-        Scanner sc = new Scanner(System.in);
         ManejadorProyecto manejador = new ManejadorProyecto();
-        System.out.println("Agregue un proyecto para empezar");
-        System.out.println("Ingrese un tema para el proyecto: ");
-        String tema = sc.next();
+        String tema = ingresoDeDatos("Agregue un proyecto para empezar \nIngrese un tema para el proyecto: "
+                ,"Ingrese un nombre distinto de q"
+                , s -> !s.equals("q"));
         manejador.agregarProyecto(new Proyecto(tema));
         menuPrincipal(manejador);
     }
