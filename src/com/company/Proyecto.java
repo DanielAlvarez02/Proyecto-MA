@@ -1,13 +1,20 @@
 package com.company;
 
-import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Proyecto {
     String tema;
-    HashMap<String, Tarea> lista = new HashMap<>();
+    LinkedList <Tarea> lista;
+
+    public Proyecto(String tema) {
+        this.tema = tema;
+        lista = new LinkedList<Tarea>();
+    }
 
     public Proyecto(){
-
+        tema=null;
+        lista = new LinkedList<Tarea>();
     }
 
     public String getTema() {
@@ -17,17 +24,31 @@ public class Proyecto {
     public void ejecutar(){
 
     }
-    public void agregarTarea(){
-
+    public void agregarTarea(Tarea tarea){
+        lista.add(tarea);
     }
-    public void aberirTareas(){
 
+    public void abrirTarea(Tarea tarea){
+        tarea.toString();
     }
-    public Tarea buscarTareas(){
-        return null;
+    public void buscarTarea(String tarea){
+        Iterator<Tarea> it = lista.iterator();
+        while(it.hasNext()){
+            String tema = it.next().getTarea();
+            if(tema.equalsIgnoreCase(tarea)){
+                it.toString();
+            }
+        }
     }
-    public void eliminarTarea(){
 
+    public void eliminarTarea(String tarea){
+        Iterator<Tarea> it = lista.iterator();
+        while(it.hasNext()){
+            String tema = it.next().getTarea();
+            if(tema.equalsIgnoreCase(tarea)){
+                it.remove();
+            }
+        }
     }
     public void pausar(){
 

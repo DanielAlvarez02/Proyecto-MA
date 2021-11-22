@@ -17,4 +17,14 @@ public class Tarea {
     public boolean verificarEstado(){
         return false;
     }
+    public String getTarea() {
+        return titulo;
+    }
+
+    @Override
+    public String toString() {
+        return "Tarea{" +
+                "titulo='" + titulo + '\'' +
+                '}';
+    }
 }

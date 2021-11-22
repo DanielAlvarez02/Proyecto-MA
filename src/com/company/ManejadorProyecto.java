@@ -22,7 +22,6 @@ public class ManejadorProyecto {
             if(tema.equalsIgnoreCase(nombreProyecto)){
                 it.toString();
             }
-
         }
     }
     public void eliminarProyecto(String nombreProyecto){
