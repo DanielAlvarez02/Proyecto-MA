@@ -79,12 +79,12 @@ public class ManejadorProyecto {
                         int num2 = sn.nextInt();
                         pomodoro.modificarTiempoDeDescansoLargo(num2);
                         break;
-                    case 5:
+                    case 4:
                         System.out.println("Ingrese el número de ciclos deldescanso largo: \n");
                         int num3 = sn.nextInt();
                         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(num3);
                         break;
-                    case 4:
+                    case 5:
                         salir = true;
                         break;
                     default:
