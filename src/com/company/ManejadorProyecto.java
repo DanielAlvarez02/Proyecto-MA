@@ -79,16 +79,16 @@ public class ManejadorProyecto {
                         int num2 = sn.nextInt();
                         pomodoro.modificarTiempoDeDescansoLargo(num2);
                         break;
-                    case 5:
+                    case 4:
                         System.out.println("Ingrese el número de ciclos deldescanso largo: \n");
                         int num3 = sn.nextInt();
                         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(num3);
                         break;
-                    case 4:
+                    case 5:
                         salir = true;
                         break;
                     default:
-                        System.out.println("Solo números entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Debes insertar un número");
