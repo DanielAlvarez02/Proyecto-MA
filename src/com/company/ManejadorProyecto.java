@@ -12,8 +12,18 @@ public class ManejadorProyecto {
     public void agregarProyecto(Proyecto proyecto){
         lista.add(proyecto);
     }
-    public void abrirProyecto(Proyecto proyecto){
-        proyecto.toString();
+    public void abrirProyecto(){
+        Scanner sn = new Scanner(System.in);
+        System.out.println("A continuación se muestran todos los proyecto: \n");
+        System.out.println(lista.toString());
+        System.out.println("Por favor ingrese el nombre del proyecto que desea abrir: \n");
+        String tema = sn.next();
+        for(Proyecto aux: lista){
+            if(aux.getTema().equalsIgnoreCase(tema)){
+                aux.toString();
+            }
+        }
+
     }
     public void buscarProyecto(String nombreProyecto){
         Iterator <Proyecto>it = lista.iterator();
