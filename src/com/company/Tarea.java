@@ -6,6 +6,10 @@ public class Tarea {
     double tiempoAproximado;
     boolean estado; // Terminado = true, no terminado = false
 
+    public Tarea(String titulo) {
+        this.titulo = titulo;
+    }
+
     public Tarea(String titulo, String descripcion, double tiempoAproximado) {
         this.titulo = titulo;
         this.descripcion = descripcion;
