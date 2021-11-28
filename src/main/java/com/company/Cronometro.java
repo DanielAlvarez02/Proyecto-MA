@@ -50,6 +50,30 @@ public class Cronometro {
         this.numeroDeCiclosParaDescansoLargo = numeroDeCiclosParaDescansoLargo;
     }
 
+    public int getTiempoDeActividad() {
+        return tiempoDeActividad;
+    }
+
+    public int getTiempoDeDescansoCorto() {
+        return tiempoDeDescansoCorto;
+    }
+
+    public int getTiempoDeDescansoLargo() {
+        return tiempoDeDescansoLargo;
+    }
+
+    public int getNumeroDeCiclosParaDescansoLargo() {
+        return numeroDeCiclosParaDescansoLargo;
+    }
+
+    public int getSegundosRestantesActuales() {
+        return segundosRestantesActuales;
+    }
+
+    public int getCantidadDeCiclosActuales() {
+        return cantidadDeCiclosActuales;
+    }
+
     //Clase que tiene las acciones que van a ser ejecutadas por el Cronómetro
     private class TareaDeTemporizador extends TimerTask {
         //El estado de esta clase se conforma del valor de sus atributos

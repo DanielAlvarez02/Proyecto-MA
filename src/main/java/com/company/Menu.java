@@ -45,8 +45,6 @@ public class Menu {
 
     public void editarPomodoro() {
 
-        boolean salir = false;
-        int opcion;
         Cronometro pomodoro = manejador.getPomodoro();
 
         String input = ingresoDeDatos("Escribe una de las opciones\n 1. Cambiar tiempo de actividad \n 2. Cambiar tiempo descanso corto " +
@@ -71,12 +69,11 @@ public class Menu {
                 pomodoro.modificarTiempoDeDescansoLargo(num2);
                 break;
             case "4":
-                System.out.println("Ingrese el número de ciclos deldescanso largo: \n");
+                System.out.println("Ingrese el número de ciclos para el descanso largo: \n");
                 int num3 = sc.nextInt();
                 pomodoro.modificarNumeroDeCiclosParaDescansoLargo(num3);
                 break;
             case "5":
-                salir = true;
                 break;
             default:
                 System.out.println();
