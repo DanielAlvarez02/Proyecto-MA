@@ -37,14 +37,15 @@ public class Proyecto {
     public void abrirTarea(Tarea tarea){
         tarea.toString();
     }
-    public void buscarTarea(String tarea){
+    public Tarea buscarTarea(String tarea){
         Iterator<Tarea> it = lista.iterator();
         while(it.hasNext()){
             String tema = it.next().getTarea();
             if(tema.equalsIgnoreCase(tarea)){
-                it.toString();
+                return (Tarea) it;
             }
         }
+        return null;
     }
 
     public void eliminarTarea(String tarea){
