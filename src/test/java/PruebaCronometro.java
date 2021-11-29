@@ -1,4 +1,6 @@
 import com.company.Cronometro;
+import com.company.Proyecto;
+import com.company.Tarea;
 import org.junit.Test;
 
 import java.util.Scanner;
@@ -66,7 +68,16 @@ public class PruebaCronometro {
         pomodoro.modificarTiempoDeDescansoCorto(tiempoAEsperado);
         assertEquals(tiempoAEsperado, pomodoro.getTiempoDeDescansoCorto());
     }
-    
+
+    @Test
+    public void give_same_Tarea_when_searched_then_ok(){
+        Tarea tarea = new Tarea("ejemplo");
+        Proyecto proyecto = new Proyecto();
+
+        proyecto.agregarTarea(tarea);
+
+        assertTrue(tarea.equals(proyecto.buscarTarea("tarea")));
+    };
 
 
 //        int tiempoAEsperado = 5*60;

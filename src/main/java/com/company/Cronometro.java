@@ -114,7 +114,36 @@ public class Cronometro {
         this.numeroDeCiclosParaDescansoLargo = numeroDeCiclosParaDescansoLargo;
     }
 
-    // Enum para la fase del pomodoro
+    public int getTiempoDeActividad() {
+        return tiempoDeActividad;
+    }
+
+    public int getTiempoDeDescansoCorto() {
+        return tiempoDeDescansoCorto;
+    }
+
+    public int getTiempoDeDescansoLargo() {
+        return tiempoDeDescansoLargo;
+    }
+
+    public int getNumeroDeCiclosParaDescansoLargo() {
+        return numeroDeCiclosParaDescansoLargo;
+    }
+
+    public FaseDelPomodoro getFaseDelPomodoroActual() {
+        return faseDelPomodoroActual;
+    }
+
+    public int getSegundosRestantes() {
+        return segundosRestantes;
+    }
+
+    public int getCantidadDeCiclosTranscurridos() {
+        return cantidadDeCiclosTranscurridos;
+    }
+
+
+// Enum para la fase del pomodoro
 
     private enum FaseDelPomodoro{
         actividad, desansoCorto, descansoLargo;
