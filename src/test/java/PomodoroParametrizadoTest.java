@@ -12,6 +12,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(value = Parameterized.class)
 public class PomodoroParametrizadoTest {
     private int expected;
+
+    @Parameterized.Parameters
     public static Iterable<Object[]> parameters(){
         List<Object[]> objects = new ArrayList<Object[]>();
         objects.add(new Object[]{2});
@@ -24,13 +26,15 @@ public class PomodoroParametrizadoTest {
         return objects;
     }
 
+    public PomodoroParametrizadoTest(int expected) {
+        this.expected = expected;
+    }
+
     @Test
     public void give_same_Cronometro_when_numeroDeCiclos_modified_then_ok() {
         Cronometro pomodoro = new Cronometro();
-        int nCEsperado = 2;
-
-        pomodoro.modificarNumeroDeCiclosParaDescansoLargo(nCEsperado);
-        assertEquals(nCEsperado, pomodoro.getNumeroDeCiclosParaDescansoLargo());
+        pomodoro.modificarNumeroDeCiclosParaDescansoLargo(expected);
+        assertEquals(expected, pomodoro.getNumeroDeCiclosParaDescansoLargo());
 
         //HEAD
     }
