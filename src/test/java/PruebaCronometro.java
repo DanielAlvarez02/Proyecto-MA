@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 public class PruebaCronometro {
     // 8 test unitarios con assert
@@ -57,13 +58,16 @@ public class PruebaCronometro {
 
     //assertNotNull
 
-    @Test
     public void give_same_time_in_Cronometro_when_paused_then_ok(){
         Cronometro pomodoro = new Cronometro();
         pomodoro.iniciarCiclos();
-        int segundosRestantes = pomodoro.getSegundosRestantesActuales();
+        int pausa1 = pomodoro.getSegundosRestantesActuales();
         pomodoro.pausarCiclos();
-        assertTrue("el cronometro se puede pausar",segundosRestantes == pomodoro.getSegundosRestantesActuales());
+        int pausa2 = pomodoro.getSegundosRestantesActuales();
+        assertTrue(pausa1 == pausa2);
     }
-    
+
+    public void give_countdown_in_Cronometro_when_iniciarCiclos_then_ok(){
+        Cronometro mockCronometro = mock(Cronometro.class);
+    }
 }
