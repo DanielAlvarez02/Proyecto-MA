@@ -134,7 +134,7 @@ public class Cronometro {
         return faseDelPomodoroActual;
     }
 
-    public int getSegundosRestantes() {
+    public int getSegundosRestantesActuales() {
         return segundosRestantes;
     }
 
