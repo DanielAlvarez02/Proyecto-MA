@@ -19,6 +19,10 @@ public class Proyecto {
         lista = new LinkedList<Tarea>();
     }
 
+    public LinkedList<Tarea> getLista() {
+        return lista;
+    }
+
     public String getTema() {
         return tema;
     }

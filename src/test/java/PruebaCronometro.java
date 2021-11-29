@@ -1,6 +1,9 @@
 import com.company.Cronometro;
+import com.company.Proyecto;
+import com.company.Tarea;
 import org.junit.Test;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -49,6 +52,30 @@ public class PruebaCronometro {
 
     //assertEquals
     //assertNotEquals
+
+
+    @Test
+    public void give_lista_de_tareas_when_agregarTarea_then_ok(){
+        Proyecto proyecto = new Proyecto();
+        Tarea tarea = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 20);
+        proyecto.agregarTarea(tarea);
+
+        Tarea tareaEsperada = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 25);
+        LinkedList listaEsperada = new LinkedList<Tarea>();
+        listaEsperada.add(tareaEsperada);
+
+        assertNotEquals(listaEsperada, proyecto.getLista());
+
+    }
+
+    @Test
+    public void give_lista_de_tareas_when_eliminarTarea_then_ok(){
+        Proyecto proyecto = new Proyecto("Tareas diarias");
+        Tarea tarea = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 20);
+        proyecto.agregarTarea(tarea);
+        proyecto.eliminarTarea("Editar Perfil");
+        assertTrue(proyecto.getLista().isEmpty());
+    }
 
     //assertSame
     //assertNotSame
