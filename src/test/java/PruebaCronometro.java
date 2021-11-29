@@ -29,12 +29,14 @@ public class PruebaCronometro {
     // 1 con parametros
 
     @Test
-    public void give_same_Cronometro_when_modified_then_ok(){
+    public void give_same_Cronometro_when_numeroDeCiclos_modified_then_ok() {
         Cronometro pomodoro = new Cronometro();
         int nCEsperado = 2;
 
         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(nCEsperado);
         assertEquals(nCEsperado, pomodoro.getNumeroDeCiclosParaDescansoLargo());
+
+        //HEAD
     }
 
     @Test
@@ -64,6 +66,20 @@ public class PruebaCronometro {
         assertEquals(tiempoAEsperado, pomodoro.getTiempoDeDescansoCorto());
     }
 
+=======
+    }
+
+//        int tiempoAEsperado = 5*60;
+//        pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
+//
+//
+//        pomodoro.modificarTiempoDeDescansoLargo(6*60);
+//
+//        pomodoro.modificarTiempoDeDescansoCorto(7*60);
+//    }
+
+
+>>>>>>> 3ee902437874f2157d71d43b21375fb0b1ace391
     //assertEquals
     //assertNotEquals
 
@@ -76,6 +92,12 @@ public class PruebaCronometro {
     //assertNotNull
 
     @Test
-    public void give_same_Cronometro_when_paused_then_ok(){
+    public void give_same_time_in_Cronometro_when_paused_then_ok(){
+        Cronometro pomodoro = new Cronometro();
+        pomodoro.iniciarCiclos();
+        int segundosRestantes = pomodoro.getSegundosRestantesActuales();
+        pomodoro.pausarCiclos();
+        assertTrue("el cronometro se puede pausar",segundosRestantes == pomodoro.getSegundosRestantesActuales());
     }
+    
 }
