@@ -13,6 +13,20 @@ public class PruebaCronometro {
     // 4 refactorizaciones
 
 
+    //Juan
+    // Mocks + ciclos descanso largo
+
+    // Renato
+    // 3 de abajo xd
+
+    //Efra
+    // agregar / eliminar tareas
+    // 1 con parametros
+
+    // Adri
+    //  give_same_Cronometro_when_paused_then_ok
+    //  buscar tarea: que retorne la tarea
+    // 1 con parametros
 
     @Test
     public void give_same_Cronometro_when_modified_then_ok(){
@@ -40,7 +54,7 @@ public class PruebaCronometro {
     //assertNotSame
 
     // assertFalse
-    // assertTrue
+    // assertTrue(
 
     //assertNotNull
 
