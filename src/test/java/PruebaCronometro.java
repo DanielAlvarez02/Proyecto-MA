@@ -31,21 +31,38 @@ public class PruebaCronometro {
     @Test
     public void give_same_Cronometro_when_modified_then_ok(){
         Cronometro pomodoro = new Cronometro();
-
         int nCEsperado = 2;
+
         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(nCEsperado);
         assertEquals(nCEsperado, pomodoro.getNumeroDeCiclosParaDescansoLargo());
-
-
-        int tiempoAEsperado = 5*60;
-        pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
-
-
-        pomodoro.modificarTiempoDeDescansoLargo(6*60);
-
-        pomodoro.modificarTiempoDeDescansoCorto(7*60);
     }
 
+    @Test
+    public void give_same_Cronometro_when_modified_activity_time_then_ok(){
+        Cronometro pomodoro = new Cronometro();
+        int tiempoAEsperado = 5*60;
+
+        pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
+        assertEquals(tiempoAEsperado, pomodoro.getTiempoDeActividad());
+    }
+
+    @Test
+    public void give_same_Cronometro_when_modified_long_rest_time_then_ok(){
+        Cronometro pomodoro = new Cronometro();
+        int tiempoAEsperado = 5*60;
+        
+        pomodoro.modificarTiempoDeDescansoLargo(tiempoAEsperado);
+        assertEquals(tiempoAEsperado, pomodoro.getTiempoDeDescansoLargo());
+    }
+
+    @Test
+    public void give_same_Cronometro_when_modified_short_rest_time_then_ok(){
+        Cronometro pomodoro = new Cronometro();
+        int tiempoAEsperado = 5*60;
+
+        pomodoro.modificarTiempoDeDescansoCorto(tiempoAEsperado);
+        assertEquals(tiempoAEsperado, pomodoro.getTiempoDeDescansoCorto());
+    }
 
     //assertEquals
     //assertNotEquals
