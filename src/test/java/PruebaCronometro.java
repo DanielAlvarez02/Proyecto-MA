@@ -22,6 +22,7 @@ public class PruebaCronometro {
         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(nCEsperado);
         assertEquals(nCEsperado, pomodoro.getNumeroDeCiclosParaDescansoLargo());
 
+
         int tiempoAEsperado = 5*60;
         pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
 
@@ -30,6 +31,18 @@ public class PruebaCronometro {
 
         pomodoro.modificarTiempoDeDescansoCorto(7*60);
     }
+
+
+    //assertEquals
+    //assertNotEquals
+
+    //assertSame
+    //assertNotSame
+
+    // assertFalse
+    // assertTrue
+
+    //assertNotNull
 
     @Test
     public void give_same_Cronometro_when_paused_then_ok(){
