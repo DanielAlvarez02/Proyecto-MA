@@ -65,9 +65,8 @@ public class PruebaCronometro {
         pomodoro.modificarTiempoDeDescansoCorto(tiempoAEsperado);
         assertEquals(tiempoAEsperado, pomodoro.getTiempoDeDescansoCorto());
     }
+    
 
-=======
-    }
 
 //        int tiempoAEsperado = 5*60;
 //        pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
@@ -79,7 +78,7 @@ public class PruebaCronometro {
 //    }
 
 
->>>>>>> 3ee902437874f2157d71d43b21375fb0b1ace391
+        //3ee902437874f2157d71d43b21375fb0b1ace391
     //assertEquals
     //assertNotEquals
 
