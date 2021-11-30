@@ -16,6 +16,10 @@ public class Proyecto {
         tareas = new HashMap<>();
     }
 
+    public LinkedList<Tarea> getLista() {
+        return lista;
+    }
+
     public String getTema() {
         return tema;
     }

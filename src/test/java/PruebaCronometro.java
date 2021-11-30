@@ -1,8 +1,6 @@
 import com.company.*;
 import org.junit.Test;
-
 import java.util.*;
-
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
@@ -90,6 +88,30 @@ public class PruebaCronometro {
         //3ee902437874f2157d71d43b21375fb0b1ace391
     //assertEquals
     //assertNotEquals
+
+
+    @Test
+    public void give_lista_de_tareas_when_agregarTarea_then_ok(){
+        Proyecto proyecto = new Proyecto();
+        Tarea tarea = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 20);
+        proyecto.agregarTarea(tarea);
+
+        Tarea tareaEsperada = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 25);
+        LinkedList listaEsperada = new LinkedList<Tarea>();
+        listaEsperada.add(tareaEsperada);
+
+        assertNotEquals(listaEsperada, proyecto.getLista());
+
+    }
+
+    @Test
+    public void give_lista_de_tareas_when_eliminarTarea_then_ok(){
+        Proyecto proyecto = new Proyecto("Tareas diarias");
+        Tarea tarea = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 20);
+        proyecto.agregarTarea(tarea);
+        proyecto.eliminarTarea("Editar Perfil");
+        assertTrue(proyecto.getLista().isEmpty());
+    }
 
     //assertSame
     //assertNotSame
