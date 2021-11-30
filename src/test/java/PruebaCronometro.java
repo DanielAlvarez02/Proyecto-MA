@@ -62,8 +62,8 @@ public class PruebaCronometro {
         proyecto.agregarTarea(tarea);
 
         Tarea tareaEsperada = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 25);
-        LinkedList listaEsperada = new LinkedList<Tarea>();
-        listaEsperada.add(tareaEsperada);
+        HashMap<String, Tarea> listaEsperada = new HashMap<>();
+        listaEsperada.put(tareaEsperada.getTitulo(),tareaEsperada);
 
         assertNotEquals(listaEsperada, proyecto.getTareas());
 
