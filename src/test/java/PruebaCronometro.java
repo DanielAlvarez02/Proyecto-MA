@@ -5,26 +5,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class PruebaCronometro {
-    // 8 test unitarios con assert
-    // 2 test unitarios con mocks
-    // 2 test unitarios con parametros
-    // 4 refactorizaciones
 
-
-    //Juan
-    // Mocks + ciclos descanso largo
-
-    // Renato
-    // 3 de abajo xd
-
-    //Efra
-    // agregar / eliminar tareas
-    // 1 con parametros
-
-    // Adri
-    //  give_same_Cronometro_when_paused_then_ok
-    //  buscar tarea: que retorne la tarea
-    // 1 con parametros
 
     @Test
     public void give_same_Cronometro_when_numeroDeCiclos_modified_then_ok() {
@@ -71,24 +52,8 @@ public class PruebaCronometro {
 
         proyecto.agregarTarea(tarea);
 
-        assertTrue(tarea.equals(proyecto.buscarTarea("tarea")));
+        assertTrue(tarea.equals(proyecto.buscarTarea("ejemplo")));
     };
-
-
-//        int tiempoAEsperado = 5*60;
-//        pomodoro.modificarTiempoDeActividad(tiempoAEsperado);
-//
-//
-//        pomodoro.modificarTiempoDeDescansoLargo(6*60);
-//
-//        pomodoro.modificarTiempoDeDescansoCorto(7*60);
-//    }
-
-
-        //3ee902437874f2157d71d43b21375fb0b1ace391
-    //assertEquals
-    //assertNotEquals
-
 
     @Test
     public void give_lista_de_tareas_when_agregarTarea_then_ok(){
@@ -100,7 +65,7 @@ public class PruebaCronometro {
         LinkedList listaEsperada = new LinkedList<Tarea>();
         listaEsperada.add(tareaEsperada);
 
-        assertNotEquals(listaEsperada, proyecto.getLista());
+        assertNotEquals(listaEsperada, proyecto.getTareas());
 
     }
 
@@ -110,16 +75,8 @@ public class PruebaCronometro {
         Tarea tarea = new Tarea("Editar Perfil", "Cambiar los datos de mi perfil", 20);
         proyecto.agregarTarea(tarea);
         proyecto.eliminarTarea("Editar Perfil");
-        assertTrue(proyecto.getLista().isEmpty());
+        assertTrue(proyecto.getTareas().isEmpty());
     }
-
-    //assertSame
-    //assertNotSame
-
-    // assertFalse
-    // assertTrue(
-
-    //assertNotNull
 
     @Test
     public void give_same_time_in_Cronometro_when_paused_then_ok(){

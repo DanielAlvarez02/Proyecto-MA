@@ -16,8 +16,8 @@ public class Proyecto {
         tareas = new HashMap<>();
     }
 
-    public LinkedList<Tarea> getLista() {
-        return lista;
+    public HashMap<String,Tarea> getTareas() {
+        return tareas;
     }
 
     public String getTema() {
