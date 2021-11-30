@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -82,7 +83,7 @@ public class Menu {
     }
 
     public void abrirProyecto() {
-        LinkedList<Proyecto> proyectos = manejador.getProyectos();
+        HashMap<String,Proyecto> proyectos = manejador.getProyectos();
         while (true) {
             System.out.println("A continuación se muestran todos los proyecto: \n");
             System.out.println(proyectos.toString());

@@ -1,22 +1,19 @@
 package com.company;
 
-import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Proyecto {
     String tema;
-    LinkedList <Tarea> lista;
+    HashMap<String,Tarea> tareas;
 
     public Proyecto(String tema) {
         this.tema = tema;
-        lista = new LinkedList<Tarea>();
+        tareas = new HashMap<>();
     }
 
     public Proyecto(){
-        tema=null;
-        lista = new LinkedList<Tarea>();
+        tema="sin tema";
+        tareas = new HashMap<>();
     }
 
     public String getTema() {
@@ -27,31 +24,18 @@ public class Proyecto {
 
     }
     public void agregarTarea(Tarea tarea){
-        lista.add(tarea);
+        tareas.put(tarea.getTitulo(),tarea);
     }
 
     public void abrirTarea(Tarea tarea){
         tarea.toString();
     }
-    public Tarea buscarTarea(String tarea){
-        Iterator<Tarea> it = lista.iterator();
-        while(it.hasNext()){
-            String tema = it.next().getTarea();
-            if(tema.equalsIgnoreCase(tarea)){
-                return (Tarea) it;
-            }
-        }
-        return null;
+    public Tarea buscarTarea(String tituloDeTarea){
+        return tareas.get(tituloDeTarea);
     }
 
-    public void eliminarTarea(String tarea){
-        Iterator<Tarea> it = lista.iterator();
-        while(it.hasNext()){
-            String tema = it.next().getTarea();
-            if(tema.equalsIgnoreCase(tarea)){
-                it.remove();
-            }
-        }
+    public void eliminarTarea(String tituloDeTarea){
+        tareas.remove(tituloDeTarea);
     }
     public void pausar(){
 
@@ -64,7 +48,7 @@ public class Proyecto {
     public String toString() {
         return "Proyecto{" +
                 "tema='" + tema + '\'' +
-                ", lista=" + lista +
+                ", lista=" + tareas +
                 '}';
     }
 }

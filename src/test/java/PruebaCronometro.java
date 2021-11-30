@@ -1,11 +1,8 @@
-import com.company.Cronometro;
-import com.company.Proyecto;
-import com.company.Tarea;
+import com.company.*;
 import org.junit.Test;
 
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
@@ -102,6 +99,7 @@ public class PruebaCronometro {
 
     //assertNotNull
 
+    @Test
     public void give_same_time_in_Cronometro_when_paused_then_ok(){
         Cronometro pomodoro = new Cronometro();
         pomodoro.iniciarCiclos();
@@ -111,7 +109,63 @@ public class PruebaCronometro {
         assertTrue(pausa1 == pausa2);
     }
 
-    public void give_countdown_in_Cronometro_when_iniciarCiclos_then_ok(){
-        Cronometro mockCronometro = mock(Cronometro.class);
+    @Test
+    public void load_data_from_database_when_cargarProyectos_then_ok(){
+        BaseDeDatos bdd = mock(BaseDeDatos.class);
+        HashMap<String,Proyecto> proyectos = new HashMap<>();
+
+        Proyecto proyecto1 = new Proyecto();
+        proyecto1.agregarTarea(new Tarea("tarea 1"));
+        proyecto1.agregarTarea(new Tarea("tarea 2"));
+
+        Proyecto proyecto2 = new Proyecto();
+        proyecto2.agregarTarea(new Tarea("tarea 3"));
+        proyecto2.agregarTarea(new Tarea("tarea 4"));
+
+        proyectos.put(proyecto1.getTema(),proyecto1);
+        proyectos.put(proyecto1.getTema(),proyecto2);
+
+        try {
+            when(bdd.obtenerDatosDeUsuario("daniel")).thenReturn(proyectos);
+        }
+        catch (Exception e){
+
+        }
+
+        ManejadorProyecto manejadorProyecto = new ManejadorProyecto();
+
+        manejadorProyecto.cargarProyectos("daniel");
+
+        assertEquals(proyectos, manejadorProyecto.getProyectos());
     }
+
+    @Test
+    public void save_data_in_database_when_guardarProyectos_then_ok(){
+        BaseDeDatos bdd = mock(BaseDeDatos.class);
+        HashMap<String,Proyecto> proyectos = new HashMap<>();
+
+        Proyecto proyecto1 = new Proyecto();
+        proyecto1.agregarTarea(new Tarea("tarea 1"));
+        proyecto1.agregarTarea(new Tarea("tarea 2"));
+
+        Proyecto proyecto2 = new Proyecto();
+        proyecto2.agregarTarea(new Tarea("tarea 3"));
+        proyecto2.agregarTarea(new Tarea("tarea 4"));
+
+        proyectos.put(proyecto1.getTema(),proyecto1);
+        proyectos.put(proyecto1.getTema(),proyecto2);
+
+        try {
+            when(bdd.guardarDatosDeUsuario("daniel",proyectos)).thenReturn(true);
+        }
+        catch (Exception e){
+
+        }
+
+        ManejadorProyecto manejadorProyecto = new ManejadorProyecto();
+        manejadorProyecto.agregarProyecto(proyecto1);
+        manejadorProyecto.agregarProyecto(proyecto2);
+        assertTrue(manejadorProyecto.guardarProyectos("daniel"));
+    }
+
 }
