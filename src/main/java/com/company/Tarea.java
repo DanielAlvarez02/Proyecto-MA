@@ -29,7 +29,7 @@ public class Tarea {
     public boolean verificarEstado(){
         return estado;
     }
-    public String getTarea() {
+    public String getTitulo() {
         return titulo;
     }
 

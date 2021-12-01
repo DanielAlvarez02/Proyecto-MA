@@ -2,41 +2,55 @@ package com.company;
 import java.util.*;
 
 public class ManejadorProyecto {
-    private LinkedList <Proyecto> proyectos;
-    Cronometro pomodoro = new Cronometro();
+    private HashMap <String,Proyecto> proyectos;
+    Cronometro pomodoro;
+    BaseDeDatos bdd;
 
     public ManejadorProyecto() {
-        proyectos = new LinkedList<Proyecto>();
+        proyectos = new HashMap<>();
+        pomodoro = new Cronometro();
+        bdd = new BaseDeDatos();
     }
 
     public void agregarProyecto(Proyecto proyecto){
-        proyectos.add(proyecto);
+        proyectos.put(proyecto.getTema(),proyecto);
     }
 
     public Proyecto buscarProyecto(String nombreProyecto){
-        for(Proyecto proy : this.proyectos){
-            if(proy.getTema().equals(nombreProyecto)){
-                return proy;
-            }
-        }
-        return null;
+        return proyectos.get(nombreProyecto);
     }
     public void eliminarProyecto(String nombreProyecto){
-        Iterator <Proyecto>it = proyectos.iterator();
-        while(it.hasNext()){
-            String tema = it.next().getTema();
-            if(tema.equalsIgnoreCase(nombreProyecto)){
-                it.remove();
-            }
+        proyectos.remove(nombreProyecto);
+    }
+
+    public boolean guardarProyectos(String username){
+        try {
+            return bdd.guardarDatosDeUsuario(username, proyectos);
+        }
+        catch (Exception e){
+            return false;
         }
     }
 
-
+    public boolean cargarProyectos(String username){
+        try {
+            HashMap<String,Proyecto> proyectosObtenidos = bdd.obtenerDatosDeUsuario(username);
+            if(proyectos != null){
+                this.proyectos = proyectosObtenidos;
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+        
     public Cronometro getPomodoro() {
         return pomodoro;
     }
 
-    public LinkedList<Proyecto> getProyectos() {
+    public HashMap<String,Proyecto> getProyectos() {
         return proyectos;
     }
 }
