@@ -31,11 +31,17 @@ public class PomodoroParametrizadoTest {
     }
 
     @Test
+    public void give_same_Cronometro_when_modified_activity_time_then_ok(){
+        Cronometro pomodoro = new Cronometro();
+        pomodoro.modificarTiempoDeActividad(expected);
+        assertEquals(expected, pomodoro.getTiempoDeActividad());
+    }
+
+    @Test
     public void give_numero_de_ciclos_when_numeroDeCiclos_modified_then_ok() {
         Cronometro pomodoro = new Cronometro();
         pomodoro.modificarNumeroDeCiclosParaDescansoLargo(expected);
         assertEquals(expected, pomodoro.getNumeroDeCiclosParaDescansoLargo());
 
-        //HEAD
     }
 }
